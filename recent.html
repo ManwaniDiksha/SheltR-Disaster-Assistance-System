@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Disaster Updates</title>
+    <link rel="stylesheet" href="./recent.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .main-bg {
+            background-color: #efdfbb;
+            max-width: 1140px;
+            width: 95%;
+            margin: 20px auto 55px auto;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        #disasterUpdates {
+            width: 100%;
+            background: #efdfbb;
+            border: 2px solid #911911;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: "Montserrat", sans-serif;
+            color: #911911;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        #disasterUpdates h3 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.4em;
+        }
+
+        .disaster-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .disaster-item {
+            border-left: 5px solid #911911;
+            border-top: 5px solid #911911;
+            border-right: 2px solid #911911;
+            border-bottom: 2px solid #911911;
+            background: #efdfbb;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-size: 0.95em;
+            line-height: 1.4em;
+        }
+
+        .disaster-item b {
+            font-weight: 700;
+            color: #911911;
+        }
+
+        .spinner {
+            border: 4px solid #efdfbb;
+            border-top: 4px solid #911911;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left-heading">SheltR.</div>
+
+    <div class="navbar">
+        <a href="./homepage.html">HOME</a>
+        <a href="./about.html">ABOUT US</a>
+        <a href="./contact.html">CONTACT</a>
+        <a href="./settings.html">
+            <img src="2nobg.png" alt="Settings" class="settings-icon">
+        </a>
+    </div>
+
+    <div class="main-bg">
+        <div id="disasterUpdates">
+            <h3>Recent Disaster Updates</h3>
+            <div id="disasterContent" class="disaster-list">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const disasterContainer = document.getElementById("disasterContent");
+
+        const disasterDescriptions = {
+            flood: "Heavy rainfall caused widespread flooding and water damage.",
+            earthquake: "A sudden shaking of the ground, causing potential destruction.",
+            cyclone: "A violent rotating storm with strong winds and heavy rain.",
+            storm: "Severe weather with strong winds and possible damage.",
+            volcano: "An eruption from a volcano, releasing lava, ash, and gases.",
+            fire: "Uncontrolled fire causing damage to land and property.",
+            ebola: "A dangerous viral outbreak affecting human populations.",
+            virus: "A contagious disease outbreak that spreads rapidly.",
+            default: "A disaster has occurred. Stay safe and follow local advisories."
+        };
+
+        async function fetchDisasters() {
+            disasterContainer.innerHTML = `<div class="spinner"></div>`;
+
+            try {
+                const res = await fetch("/api/recent");
+                if (!res.ok) throw new Error(`API Error: ${res.status}`);
+                const data = await res.json();
+
+                if (!data.data || data.data.length === 0) {
+                    disasterContainer.innerHTML = `<div class="disaster-item">No disaster updates available.</div>`;
+                    return;
+                }
+
+                disasterContainer.innerHTML = "";
+
+                data.data.forEach(d => {
+                    let title = d.fields?.name || "Disaster";
+
+                    // Remove month/year from title if present
+                    title = title.replace(/\s-\s[a-zA-Z]{3}\s\d{4}$/, "");
+
+                    // Country parsing
+                    let location = "";
+                    if (Array.isArray(d.fields?.country)) {
+                        location = d.fields.country
+                            .map(c => (typeof c === "string" ? c : c?.name))
+                            .filter(Boolean)
+                            .join(", ");
+                        if (title.toLowerCase().includes(location.toLowerCase())) location = "";
+                    }
+
+                    // Date
+                    let dateStr = "";
+                    if (d.fields?.date?.created) {
+                        const createdDate = new Date(d.fields.date.created);
+                        dateStr = createdDate.toLocaleDateString("en-US", {
+                            weekday: "short",
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        });
+                    }
+
+                    // Description
+                    let desc = d.fields?.description?.text || "";
+                    if (!desc) {
+                        const typeKey = Object.keys(disasterDescriptions).find(k =>
+                            (d.fields?.name || "").toLowerCase().includes(k)
+                        );
+                        desc = typeKey ? disasterDescriptions[typeKey] : disasterDescriptions.default;
+                    }
+
+                    // Emoji
+                    const emoji = getDisasterEmoji(title);
+
+                    // Compose card
+                    let heading = `${emoji} ${title}`;
+                    let subInfo = "";
+                    if (location || dateStr) subInfo = `${location}${location && dateStr ? " - " : ""}${dateStr}`;
+
+                    const div = document.createElement("div");
+                    div.className = "disaster-item";
+                    div.innerHTML = `<b>${heading}</b>${subInfo ? "<br>" + subInfo : ""}${desc ? "<br>" + desc : ""}`;
+                    disasterContainer.appendChild(div);
+                });
+
+            } catch (err) {
+                console.error(err);
+                disasterContainer.innerHTML = `<div class="disaster-item">Error fetching disaster updates. Please try again later.</div>`;
+            }
+        }
+
+        function getDisasterEmoji(title) {
+            const t = title.toLowerCase();
+            if (t.includes("flood")) return "🌊";
+            if (t.includes("earthquake")) return "🌍";
+            if (t.includes("cyclone") || t.includes("storm")) return "🌪️";
+            if (t.includes("volcano")) return "🌋";
+            if (t.includes("fire")) return "🔥";
+            if (t.includes("ebola") || t.includes("virus") || t.includes("disease")) return "🦠";
+            return "⚠️";
+        }
+
+        window.onload = fetchDisasters;
+    </script>
+
+
+</body>
+
+</html>

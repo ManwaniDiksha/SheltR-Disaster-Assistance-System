@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dos and Don'ts</title>
+  <link rel="stylesheet" href="./dosdonts.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+</head>
+<body>
+  <div id="left-heading">SheltR.</div>
+
+  <div class="navbar">
+    <a href="./homepage.html">HOME</a>
+    <a href="./about.html">ABOUT US</a>
+    <a href="./contact.html">CONTACT</a>
+    <a href="./settings.html"><img src="2nobg.png" alt="Settings" class="settings-icon"></a>
+  </div>
+
+  <div class="main-container">
+    <div class="content-wrapper">
+      <!-- Vertical Navigation -->
+      <div class="disaster-nav-vertical">
+        <button onclick="showSection('earthquake')" class="nav-btn active">🌍 Earthquake</button>
+        <button onclick="showSection('cyclone')" class="nav-btn">🌀 Cyclone</button>
+        <button onclick="showSection('volcano')" class="nav-btn">🌋 Volcano</button>
+        <button onclick="showSection('wildfire')" class="nav-btn">🔥 Wildfire</button>
+        <button onclick="showSection('flood')" class="nav-btn">🌊 Flood</button>
+        <button onclick="showSection('tsunami')" class="nav-btn">🌊 Tsunami</button>
+        <button onclick="showSection('avalanche')" class="nav-btn">🏔️ Avalanche</button>
+        <button onclick="showSection('coldwave')" class="nav-btn">❄️ Cold Wave</button>
+        <button onclick="showSection('heatwave')" class="nav-btn">☀️ Heat Wave</button>
+        <button onclick="showSection('lightning')" class="nav-btn">⚡ Lightning</button>
+        <button onclick="showSection('drought')" class="nav-btn">🌾 Drought</button>
+        <button onclick="showSection('landslide')" class="nav-btn">🪨 Landslide</button>
+        <button onclick="showSection('chemical')" class="nav-btn">🏭 Chemical</button>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="main-bg">
+          <div class="heading">Emergency Dos & Don'ts</div>
+          <hr id="section-line">
+
+          <!-- Language Selector -->
+          <div class="language-selector">
+            <label for="language">Select Language:</label>
+            <select id="language" onchange="changeLanguage()">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="gu">ગુજરાતી</option>
+            </select>
+          </div>
+
+          <!-- Disaster Sections -->
+          <div id="disaster-sections">
+            <!-- 🌍 Earthquake -->
+            <div id="earthquake" class="section active" data-disaster="earthquake">
+              <h2>🌍 Earthquake</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Drop, Cover, and Hold On." data-hi="झुकें, ढकें और पकड़ें।" data-gu="ઢીલું, ઢાંકો અને પકડી રાખો."></li>
+                    <li data-en="Stay away from windows and heavy furniture." data-hi="खिड़कियों और भारी फर्नीचर से दूर रहें।" data-gu="બારીઓ અને ભારે ફર્નિચરથી દૂર રહો."></li>
+                    <li data-en="Use stairs instead of elevators." data-hi="लिफ्ट के बजाय सीढ़ियों का उपयोग करें।" data-gu="લિફ્ટને બદલે સીડીનો ઉપયોગ કરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't use elevators during an earthquake." data-hi="भूकंप के दौरान लिफ्ट का उपयोग न करें।" data-gu="ધરતીકંપ દરમિયાન લિફ્ટનો ઉપયોગ ન કરો."></li>
+                    <li data-en="Don't stand near buildings or under trees." data-hi="इमारतों या पेड़ों के नीचे न खड़े हों।" data-gu="ઇમારતો અથવા વૃક્ષો નજીક ઊભા ન રહો."></li>
+                    <li data-en="Don't light matches or candles immediately after." data-hi="तुरंत बाद माचिस या मोमबत्ती न जलाएं।" data-gu="તરત જ તીરથી અથવા મીણબત્તી ન બાળો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🌀 Cyclone -->
+            <div id="cyclone" class="section" data-disaster="cyclone">
+              <h2>🌀 Cyclone</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Keep emergency supplies ready." data-hi="आपातकालीन सामग्री तैयार रखें।" data-gu="તાત્કાલિક સામાન તૈયાર રાખો."></li>
+                    <li data-en="Stay indoors and close all windows." data-hi="घर के अंदर रहें और खिड़कियां बंद रखें।" data-gu="ઘર અંદર રહો અને બારીઓ બંધ રાખો."></li>
+                    <li data-en="Follow evacuation instructions from authorities." data-hi="प्राधिकरणों के निर्देशों का पालन करें।" data-gu="અધિકારીઓના સૂચનોનું પાલન કરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't go near the sea coast." data-hi="समुद्र तट के पास न जाएं।" data-gu="સમુદ્ર કિનારે ન જશો."></li>
+                    <li data-en="Don't spread rumors." data-hi="अफवाहें न फैलाएं।" data-gu="અફવાઓ ન ફેલાવો."></li>
+                    <li data-en="Don't ignore weather warnings." data-hi="मौसम चेतावनियों को नज़रअंदाज़ न करें।" data-gu="હવામાન ચેતવણીઓને અવગણશો નહીં."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🌋 Volcano -->
+            <div id="volcano" class="section" data-disaster="volcano">
+              <h2>🌋 Volcano</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Wear masks to protect from ash." data-hi="राख से बचने के लिए मास्क पहनें।" data-gu="રાખથી બચવા માટે માસ્ક પહેરો."></li>
+                    <li data-en="Evacuate immediately if advised." data-hi="यदि सलाह दी जाए तो तुरंत बाहर निकलें।" data-gu="સલાહ મળે તો તરત જ બહાર નીકળો."></li>
+                    <li data-en="Keep emergency kits handy." data-hi="आपातकालीन किट पास रखें।" data-gu="તાત્કાલિક કિટ હાથવગી રાખો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't stay outdoors during ash fall." data-hi="राख गिरने के दौरान बाहर न रहें।" data-gu="રાખ પડતી વખતે બહાર ન રહો."></li>
+                    <li data-en="Don't drive in heavy ash." data-hi="गाढ़ी राख में गाड़ी न चलाएं।" data-gu="ઘણી રાખમાં ગાડી ન ચલાવો."></li>
+                    <li data-en="Don't ignore evacuation orders." data-hi="निकासी आदेशों को अनदेखा न करें।" data-gu="સ્થળાંતરણના આદેશો અવગણશો નહીં."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🔥 Wildfire -->
+            <div id="wildfire" class="section" data-disaster="wildfire">
+              <h2>🔥 Wildfire</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Keep fire extinguishers and water ready." data-hi="अग्निशामक और पानी तैयार रखें।" data-gu="ફાયર એક્સટિંગ્યુશર અને પાણી તૈયાર રાખો."></li>
+                    <li data-en="Cover your nose and mouth with a wet cloth." data-hi="नाक और मुंह को गीले कपड़े से ढकें।" data-gu="નાક અને મોઢું ભીના કપડાથી ઢાંકો."></li>
+                    <li data-en="Evacuate immediately if ordered." data-hi="आदेश मिलने पर तुरंत बाहर निकलें।" data-gu="આદેશ મળતાં જ તરત બહાર નીકળો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't light campfires in dry areas." data-hi="सूखे क्षेत्रों में अलाव न जलाएं।" data-gu="સૂકા વિસ્તારોમાં આગ ન લગાવો."></li>
+                    <li data-en="Don't block evacuation routes." data-hi="निकासी मार्गों को अवरुद्ध न करें।" data-gu="સ્થળાંતરણના માર્ગ અવરોધશો નહીં."></li>
+                    <li data-en="Don't return until authorities declare it safe." data-hi="सुरक्षित घोषित होने तक वापस न जाएं।" data-gu="સુરક્ષિત જાહેર થાય ત્યાં સુધી પાછા ન જશો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🌊 Flood -->
+            <div id="flood" class="section" data-disaster="flood">
+              <h2>🌊 Flood</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Move to higher ground immediately." data-hi="तुरंत ऊँचे स्थान पर जाएं।" data-gu="તાત્કાલિક ઊંચી જગ્યાએ જાઓ."></li>
+                    <li data-en="Turn off electricity and gas." data-hi="बिजली और गैस बंद कर दें।" data-gu="વીજળી અને ગેસ બંધ કરો."></li>
+                    <li data-en="Follow local authority updates." data-hi="स्थानीय अधिकारियों के अपडेट का पालन करें।" data-gu="સ્થાનિક અધિકારીઓના અપડેટનું પાલન કરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't walk or drive through floodwaters." data-hi="बाढ़ के पानी में न चलें या गाड़ी न चलाएं।" data-gu="પૂરના પાણીમાં ચાલશો કે ગાડી ચલાવશો નહીં."></li>
+                    <li data-en="Don't drink flood water." data-hi="बाढ़ का पानी न पिएं।" data-gu="પૂરના પાણી ન પીવો."></li>
+                    <li data-en="Don't ignore evacuation orders." data-hi="निकासी आदेशों को नज़रअंदाज़ न करें।" data-gu="સ્થળાંતરણના આદેશો અવગણશો નહીં."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tsunami -->
+            <div id="tsunami" class="section" data-disaster="tsunami">
+              <h2>🌊 Tsunami</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Move to higher ground immediately." data-hi="तुरंत ऊँचाई पर जाएं।" data-gu="તુરંત ઊંચી જગ્યાએ જાઓ."></li>
+                    <li data-en="Follow evacuation routes." data-hi="निकासी मार्ग का पालन करें।" data-gu="એવાક્યુએશન માર્ગ અનુસરો."></li>
+                    <li data-en="Listen to official alerts and instructions." data-hi="आधिकारिक चेतावनियों और निर्देशों को सुनें।" data-gu="અધિકારીક ચેતવણીઓ અને સૂચનો સાંભળો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't return to the shore until declared safe." data-hi="जब तक सुरक्षित न कहा जाए, तट पर न लौटें।" data-gu="જ્યારે સુધી સલામત ન કહેવામાં આવે તેટલાં સુધી કિનારે ન જાવ."></li>
+                    <li data-en="Don't ignore warning sirens." data-hi="चेतावनी संकेतों को नजरअंदाज न करें।" data-gu="ચેતવણીઓને અવગણશો નહીં."></li>
+                    <li data-en="Don't enter flooded areas." data-hi="बाढ़ वाले क्षेत्रों में न जाएं।" data-gu="પાણી ભરેલા વિસ્તારોમાં ન જાઓ."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avalanche -->
+            <div id="avalanche" class="section" data-disaster="avalanche">
+              <h2>🏔️ Avalanche</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Move to safe zones immediately." data-hi="सुरक्षित क्षेत्र में तुरंत जाएं।" data-gu="સલામત વિસ્તારમાં તરત જ જાઓ."></li>
+                    <li data-en="Carry emergency communication devices." data-hi="आपातकालीन संचार उपकरण साथ रखें।" data-gu="ઇમર્જન્સી કમ્યુનિકેશન ડિવાઇસ રાખો."></li>
+                    <li data-en="Inform authorities about your location." data-hi="अपनी स्थिति के बारे में अधिकारियों को सूचित करें।" data-gu="તમારી સ્થાનની જાણકારી અધિકારીઓને આપો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't attempt risky slopes." data-hi="खतरनाक ढलानों पर न जाएं।" data-gu="ખતરનાક ઢળાણ પર ન જાઓ."></li>
+                    <li data-en="Don't ignore warning signs." data-hi="चेतावनी संकेतों को नजरअंदाज न करें।" data-gu="ચેતવણીઓ અવગણશો નહીં."></li>
+                    <li data-en="Don't stay near unstable snow masses." data-hi="अस्थिर बर्फ के पास न रहें।" data-gu="અસ્થિર બરફની જાળ પાસે ન રહો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cold Wave -->
+            <div id="coldwave" class="section" data-disaster="coldwave">
+              <h2>❄️ Cold Wave</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Wear warm clothes in layers." data-hi="मल्टी लेयर कपड़े पहनें।" data-gu="કપડાં સ્તરવાર પહેરો."></li>
+                    <li data-en="Keep yourself hydrated." data-hi="खुद को हाइड्रेटेड रखें।" data-gu="પાણી પીવાનું ચાલુ રાખો."></li>
+                    <li data-en="Check on elderly and children." data-hi="बुजुर्गों और बच्चों का ध्यान रखें।" data-gu="વૃદ્ધો અને બાળકોની ચિંતા કરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't stay outside for long periods." data-hi="लंबे समय तक बाहर न रहें।" data-gu="લાંબા સમય સુધી બહાર ન રહો."></li>
+                    <li data-en="Don't drink alcohol to keep warm." data-hi="गर्म रहने के लिए शराब न पिएं।" data-gu="ગરમ રહેવા માટે દારૂ ન પીઓ."></li>
+                    <li data-en="Don't leave pets exposed to cold." data-hi="पालतुओं को ठंड में न छोड़ें।" data-gu="પાળતુ પ્રાણીઓ ઠંડીમાં ન છોડો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Heat Wave -->
+            <div id="heatwave" class="section" data-disaster="heatwave">
+              <h2>☀️ Heat Wave</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Drink plenty of water." data-hi="अधिक पानी पिएं।" data-gu="ઘણું પાણી પીઓ."></li>
+                    <li data-en="Stay in shaded or cool areas." data-hi="छाया या ठंडी जगह में रहें।" data-gu="છાયાવાળા કે ઠંડા વિસ્તારોમાં રહો."></li>
+                    <li data-en="Use sunscreen when outside." data-hi="बाहर जाने पर सनस्क्रीन लगाएं।" data-gu="બહાર જતા સમયે સનસ્ક્રીન વાપરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't stay in direct sunlight for long." data-hi="लंबे समय तक धूप में न रहें।" data-gu="લાંબા સમય સુધી સીધી સૂર્યકિરણમાં ન રહો."></li>
+                    <li data-en="Don't engage in strenuous activities." data-hi="कठिन कार्य न करें।" data-gu="કઠિન પ્રવૃત્તિઓ ન કરો."></li>
+                    <li data-en="Don't ignore symptoms of heat stroke." data-hi="हीट स्ट्रोक के लक्षणों की अनदेखी न करें।" data-gu="હીટ સ્ટ્રોકના લક્ષણો અવગણશો નહીં."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lightning / Thunderstorm -->
+            <div id="lightning" class="section" data-disaster="lightning">
+              <h2>⚡ Lightning / Thunderstorm</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Stay indoors during storms." data-hi="तूफान के दौरान अंदर रहें।" data-gu="તૂફાન દરમિયાન અંદર રહો."></li>
+                    <li data-en="Avoid using electrical appliances." data-hi="बिजली वाले उपकरणों का प्रयोग न करें।" data-gu="વિદ્યુત ઉપકરણોનો ઉપયોગ ટાળો."></li>
+                    <li data-en="Keep a first aid kit handy." data-hi="फर्स्ट एड किट साथ रखें।" data-gu="ફર્સ્ટ એડ કીટ રાખો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't stand under trees or open fields." data-hi="पेड़ों या खुले मैदान में न खड़े रहें।" data-gu="વૃક્ષો અથવા ખુલ્લા મેદાનમાં ન ઊભા રહો."></li>
+                    <li data-en="Don't use landline or corded phones." data-hi="लैंडलाइन का उपयोग न करें।" data-gu="લૅન્ડલાઇન ફોન ન વાપરો."></li>
+                    <li data-en="Don't touch metal objects outdoors." data-hi="बाहर धातु वस्तुएं न छुएं।" data-gu="બહાર ધાતુ વસ્તુઓ ન સ્પર્શો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drought -->
+            <div id="drought" class="section" data-disaster="drought">
+              <h2>🌾 Drought</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Conserve water." data-hi="पानी बचाएं।" data-gu="પાણી બચાવો."></li>
+                    <li data-en="Use water efficiently for crops and animals." data-hi="फसल और पशुओं के लिए पानी का सही उपयोग करें।" data-gu="ફસલો અને પ્રાણીઓ માટે પાણી યોગ્ય રીતે વાપરો."></li>
+                    <li data-en="Recycle and reuse water wherever possible." data-hi="जहाँ संभव हो पानी का पुन: उपयोग करें।" data-gu="જ્યાં શક્ય હોય ત્યાં પાણી ફરીથી વાપરો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't waste water." data-hi="पानी बर्बाद न करें।" data-gu="પાણી બગાડશો નહીં."></li>
+                    <li data-en="Don't leave taps running." data-hi="नल चालू न छोड़ें।" data-gu="ટેપ ચાલુ ન રાખો."></li>
+                    <li data-en="Don't pollute water sources." data-hi="जल स्रोतों को प्रदूषित न करें।" data-gu="પાણીના સ્ત્રોતને પ્રદૂષિત ન કરો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Landslide -->
+            <div id="landslide" class="section" data-disaster="landslide">
+              <h2>🪨 Landslide</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Move to safe zones immediately." data-hi="तुरंत सुरक्षित क्षेत्र में जाएं।" data-gu="તુરંત સલામત વિસ્તારમાં જાઓ."></li>
+                    <li data-en="Stay alert for early warning signs." data-hi="जल्दी चेतावनी संकेतों के लिए सतर्क रहें।" data-gu="પ્રારંભિક ચેતવણી માટે સાવધ રહો."></li>
+                    <li data-en="Inform authorities of dangerous slopes." data-hi="खतरनाक ढलानों की जानकारी अधिकारियों को दें।" data-gu="ખતરનાક ઢળાણોની જાણકારી અધિકારીઓને આપો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't go near slopes during heavy rain." data-hi="भारी बारिश के दौरान ढलानों के पास न जाएं।" data-gu="ભારે વરસાદ દરમિયાન ઢળાણ પાસે ન જાઓ."></li>
+                    <li data-en="Don't ignore small landslides." data-hi="छोटे भूस्खलन को नज़रअंदाज न करें।" data-gu="નાનાં ભૂસ્ખલનો અવગણશો નહીં."></li>
+                    <li data-en="Don't stand at the bottom of unstable slopes." data-hi="अस्थिर ढलानों के नीचे न खड़े हों।" data-gu="અસ્થિર ઢળાણની નીચે ઊભા ન રહો."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chemical / Industrial Accident -->
+            <div id="chemical" class="section" data-disaster="chemical">
+              <h2>🏭 Chemical / Industrial Accident</h2>
+              <div class="content">
+                <div class="column">
+                  <h3>Do's</h3>
+                  <ul>
+                    <li data-en="Evacuate the area immediately." data-hi="तुरंत क्षेत्र छोड़ें।" data-gu="ફોરاً વિસ્તારમાંથી નીકળો."></li>
+                    <li data-en="Follow official instructions." data-hi="आधिकारिक निर्देशों का पालन करें।" data-gu="અધિકારીક સૂચનોનું પાલન કરો."></li>
+                    <li data-en="Cover your nose and mouth with a cloth." data-hi="नाक और मुंह को कपड़े से ढकें।" data-gu="નાક અને મોઢું કપડાથી ઢાંકો."></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <h3>Don'ts</h3>
+                  <ul>
+                    <li data-en="Don't touch spilled chemicals." data-hi="गिरे हुए रसायनों को न छुएं।" data-gu="ઢોળાયેલા રસાયણોને ન સ્પર્શો."></li>
+                    <li data-en="Don't return until declared safe." data-hi="सुरक्षित घोषित होने तक वापस न जाएं।" data-gu="સલામત જાહેર થાય ત્યાં સુધી પાછા ન જાઓ."></li>
+                    <li data-en="Don't ignore evacuation orders." data-hi="निकासी आदेशों को नज़रअंदाज़ न करें।" data-gu="ખાલી કરવાના આદેશો અવગણશો નહીં."></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dosdonts.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediate Emergency Assistance</title>
+    <link rel="stylesheet" href="./emergency.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        /* Map container */
+        #map {
+            height: 400px;
+            width: 95%;
+            margin: 20px auto;
+            border-radius: 16px;
+            border: 3px solid #911911;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Controls section */
+        .controls {
+            margin: 20px auto;
+            width: 95%;
+            font-family: "Montserrat", sans-serif;
+            color: #911911;
+            background-color: #efdfbb;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #911911;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .controls button {
+            background-color: #911911;
+            color: #efdfbb;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 14px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: #b21f1f;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        .controls input[type="text"] {
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 2px solid #911911;
+            font-family: "Montserrat", sans-serif;
+            margin: 5px;
+            width: 200px;
+        }
+
+        .controls input[type="range"] {
+            accent-color: #911911;
+            cursor: pointer;
+        }
+
+        /* Facility results section */
+        .facility-list {
+            margin: 20px auto;
+            width: 95%;
+            padding: 15px;
+            background: #efdfbb;
+            border-radius: 12px;
+            border: 2px solid #911911;
+            font-family: "Montserrat", sans-serif;
+            color: #911911;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .facility-list h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #911911;
+        }
+
+        .facility-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #efdfbb;
+            border-left: 5px solid #911911;
+            border-top: 5px solid #911911;
+            border-right: 2px solid #911911;
+            border-bottom: 2px solid #911911;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+        }
+
+        .facility-item b {
+            color: #911911;
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left-heading">SheltR.</div>
+
+    <div class="navbar">
+        <a href="./homepage.html">HOME</a>
+        <a href="./about.html">ABOUT US</a>
+        <a href="./contact.html">CONTACT</a>
+        <a href="./settings.html">
+            <img src="2nobg.png" alt="Settings" class="settings-icon">
+        </a>
+    </div>
+
+    <div class="main-bg">
+        <div class="heading">Immediate Emergency Assistance</div>
+        <hr id="section-line">
+
+        <!-- Controls for location and range -->
+        <div class="controls">
+            <button onclick="getLocation()">📍 Detect My Location</button>
+            <input type="text" id="manualLocation" placeholder="Or enter location manually">
+            <button onclick="setManualLocation()">Set Location</button>
+
+            <br><br>
+            <label for="range">Choose distance (1–7 km):</label>
+            <input type="range" id="range" min="1" max="7" value="3" oninput="updateRangeLabel()">
+            <span id="rangeLabel">3 km</span>
+        </div>
+
+        <!-- Map -->
+        <div id="map"></div>
+
+        <!-- Facility list -->
+        <div class="facility-list" id="facilityList">
+            <h3>Nearby Facilities</h3>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map, userMarker, facilityMarkers = [];
+        const fictionalFacilities = [
+            {
+                name: "SheltR Hospital", type: "hospital", lat: 28.6140, lon: 77.2090, phone: "+911234567890",
+                address: "123 Main St, SheltR City", availability: "Open"
+            },
+            {
+                name: "SheltR Fire Station", type: "fire_station", lat: 28.6150, lon: 77.2100, phone: "+911234567891",
+                address: "45 Rescue Rd, SheltR City", availability: "Ready"
+            },
+            {
+                name: "SheltR Evacuation Shelter", type: "shelter", lat: 28.6135, lon: 77.2085, phone: "+911234567892",
+                address: "78 Safe Ln, SheltR City", availability: "Available"
+            },
+            {
+                name: "SheltR Rescue Team", type: "rescue_team", lat: 28.6145, lon: 77.2110, phone: "+911234567893",
+                address: "12 Rescue Hub, SheltR City", availability: "Ready"
+            },
+            {
+                name: "SheltR Police", type: "police", lat: 28.6138, lon: 77.2075, phone: "+911234567894",
+                address: "34 Law St, SheltR City", availability: "On Duty"
+            }
+        ];
+
+        function initMap(lat = 20.5937, lon = 78.9629) {
+            map = L.map('map').setView([lat, lon], 5);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+        }
+        initMap();
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    setUserLocation(pos.coords.latitude, pos.coords.longitude);
+                }, () => alert("Location access denied."));
+            } else alert("Geolocation not supported!");
+        }
+
+        function setManualLocation() {
+            const loc = document.getElementById("manualLocation").value.trim();
+            if (!loc) return alert("Enter a location!");
+            if (loc.toLowerCase() === "sheltr") {
+                setUserLocation(28.6139, 77.2090, true);
+                return;
+            }
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${loc}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.length > 0) setUserLocation(data[0].lat, data[0].lon);
+                    else alert("Location not found!");
+                });
+        }
+
+        function setUserLocation(lat, lon, fictional = false) {
+            if (userMarker) map.removeLayer(userMarker);
+            userMarker = L.marker([lat, lon]).addTo(map).bindPopup("You are here").openPopup();
+            map.setView([lat, lon], 14);
+            clearFacilities();
+            if (fictional) showFictionalFacilities();
+            else findFacilities(lat, lon);
+        }
+
+        function updateRangeLabel() {
+            document.getElementById("rangeLabel").innerText = document.getElementById("range").value + " km";
+        }
+
+        function clearFacilities() {
+            facilityMarkers.forEach(m => map.removeLayer(m));
+            facilityMarkers = [];
+            document.getElementById("results").innerHTML = "";
+        }
+
+        function showFictionalFacilities() {
+            fictionalFacilities.forEach(f => {
+                const marker = L.marker([f.lat, f.lon]).addTo(map)
+                    .bindPopup(`<b>${f.name}</b><br>Type: ${f.type}<br>Address: ${f.address}<br>Availability: ${f.availability}<br>☎ ${f.phone}`);
+                facilityMarkers.push(marker);
+
+                const div = document.createElement("div");
+                div.className = "facility-item";
+                div.innerHTML = `<b>${f.name}</b><br>Type: ${f.type}<br>Address: ${f.address}<br>Availability: ${f.availability}<br>☎ ${f.phone}`;
+                div.onclick = () => { map.flyTo([f.lat, f.lon], 16); marker.openPopup(); }
+                document.getElementById("results").appendChild(div);
+            });
+        }
+
+        function findFacilities(lat, lon) {
+            const radius = document.getElementById("range").value * 1000;
+            const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];(node["amenity"~"hospital|fire_station|shelter|police"](around:${radius},${lat},${lon}););out;`;
+            fetch(overpassUrl)
+                .then(res => res.json())
+                .then(data => {
+                    data.elements.forEach(el => {
+                        const name = el.tags.name || "Unnamed Facility";
+                        const type = el.tags.amenity || "Unknown Type";
+                        const phone = el.tags.phone || el.tags["contact:phone"] || "N/A";
+                        const address = ((el.tags["addr:housenumber"] || "") + " " + (el.tags["addr:street"] || "") + ", " + (el.tags["addr:city"] || "")).trim() || "Address N/A";
+                        const availability = el.tags.opening_hours || "Available";
+
+                        const marker = L.marker([el.lat, el.lon]).addTo(map)
+                            .bindPopup(`<b>${name}</b><br>Type: ${type}<br>Address: ${address}<br>Availability: ${availability}<br>☎ ${phone}`);
+                        facilityMarkers.push(marker);
+
+                        const div = document.createElement("div");
+                        div.className = "facility-item";
+                        div.innerHTML = `<b>${name}</b><br>Type: ${type}<br>Address: ${address}<br>Availability: ${availability}<br>☎ ${phone}`;
+                        div.onclick = () => { map.flyTo([el.lat, el.lon], 16); marker.openPopup(); }
+                        document.getElementById("results").appendChild(div);
+                    });
+                })
+                .catch(() => { document.getElementById("results").innerHTML = "Unable to load facilities." });
+        }
+    </script>
+
+
+</body>
+
+</html>

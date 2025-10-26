@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="./settings.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="left-heading">SheltR.</div>
+
+    <div class="navbar">
+        <a href="./homepage.html">HOME</a>
+        <a href="./about.html">ABOUT US</a>
+        <a href="./contact.html">CONTACT</a>
+        <a href="./settings.html" class="active">
+            <img src="2nobg.png" alt="Settings" class="settings-icon">
+        </a>
+    </div>
+
+    <div class="main-bg">
+        <div class="heading">Settings</div>
+        <hr id="section-line">
+
+        <div class="auth-tabs">
+            <button id="signupTab" class="tab active">Sign Up</button>
+            <button id="loginTab" class="tab">Login</button>
+        </div>
+
+        <div id="signupForm" class="auth-form">
+            <input type="text" id="signupName" placeholder="Full Name" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button id="signupBtn">Sign Up</button>
+            <div id="signupMessage" class="message"></div>
+            <div id="signupSpinner" class="spinner" style="display:none;">⏳ Signing up...</div>
+        </div>
+
+        <div id="loginForm" class="auth-form" style="display:none;">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button id="loginBtn">Login</button>
+            <div id="loginMessage" class="message"></div>
+            <div id="loginSpinner" class="spinner" style="display:none;">⏳ Logging in...</div>
+        </div>
+
+        <div id="profileSection" style="display:none;">
+            <h3>Welcome, <span id="profileName"></span>!</h3>
+            <p>Email: <span id="profileEmail"></span></p>
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </div>
+
+    <script>
+        const signupTab = document.getElementById("signupTab");
+        const loginTab = document.getElementById("loginTab");
+        const signupForm = document.getElementById("signupForm");
+        const loginForm = document.getElementById("loginForm");
+        const signupName = document.getElementById("signupName");
+        const signupEmail = document.getElementById("signupEmail");
+        const signupPassword = document.getElementById("signupPassword");
+        const signupBtn = document.getElementById("signupBtn");
+        const signupMessage = document.getElementById("signupMessage");
+        const signupSpinner = document.getElementById("signupSpinner");
+
+        const loginEmail = document.getElementById("loginEmail");
+        const loginPassword = document.getElementById("loginPassword");
+        const loginBtn = document.getElementById("loginBtn");
+        const loginMessage = document.getElementById("loginMessage");
+        const loginSpinner = document.getElementById("loginSpinner");
+
+        const profileSection = document.getElementById("profileSection");
+        const profileName = document.getElementById("profileName");
+        const profileEmail = document.getElementById("profileEmail");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        // --- Tabs ---
+        signupTab.onclick = () => {
+            signupTab.classList.add("active");
+            loginTab.classList.remove("active");
+            signupForm.style.display = "flex";
+            loginForm.style.display = "none";
+        };
+        loginTab.onclick = () => {
+            loginTab.classList.add("active");
+            signupTab.classList.remove("active");
+            loginForm.style.display = "flex";
+            signupForm.style.display = "none";
+        };
+
+        // --- Real-time validation ---
+        signupEmail.addEventListener("input", () => {
+            signupEmail.style.backgroundColor = signupEmail.value.includes("@") ? "#efdfbb" : "#f8d7da";
+        });
+        loginEmail.addEventListener("input", () => {
+            loginEmail.style.backgroundColor = loginEmail.value.includes("@") ? "#efdfbb" : "#f8d7da";
+        });
+
+        // --- Enter key submission ---
+        [signupName, signupEmail, signupPassword].forEach(input =>
+            input.addEventListener("keyup", e => { if (e.key === "Enter") signupBtn.click(); })
+        );
+        [loginEmail, loginPassword].forEach(input =>
+            input.addEventListener("keyup", e => { if (e.key === "Enter") loginBtn.click(); })
+        );
+
+        // --- Signup ---
+        signupBtn.onclick = async () => {
+            signupMessage.innerText = "";
+            signupSpinner.style.display = "inline";
+            try {
+                const res = await fetch("http://localhost:3000/api/auth/register", 
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        username: signupName.value,
+                        email: signupEmail.value,
+                        password: signupPassword.value
+                    })
+                });
+                const data = await res.json();
+                signupSpinner.style.display = "none";
+
+                if (res.ok) {
+                    signupMessage.style.color = "#911911";
+                    signupMessage.innerText = data.message;
+                    signupName.value = signupEmail.value = signupPassword.value = "";
+                    signupEmail.style.backgroundColor = "#efdfbb";
+                    signupPassword.style.backgroundColor = "#efdfbb";
+                } else {
+                    signupMessage.style.color = "#911911";
+                    signupMessage.innerText = data.message;
+                }
+            } catch (err) {
+                signupSpinner.style.display = "none";
+                signupMessage.style.color = "#911911";
+                signupMessage.innerText = "Server error";
+            }
+        };
+
+        // --- Login ---
+        loginBtn.onclick = async () => {
+            loginMessage.innerText = "";
+            loginSpinner.style.display = "inline";
+            try {
+                const res = await fetch("http://localhost:3000/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        email: loginEmail.value,
+                        password: loginPassword.value
+                    })
+                });
+                const data = await res.json();
+                loginSpinner.style.display = "none";
+
+                if (res.ok) {
+                    localStorage.setItem("token", data.token);
+                    showProfile(data);
+                    loginMessage.innerText = "";
+                    loginEmail.value = loginPassword.value = "";
+                    loginEmail.style.backgroundColor = "#efdfbb";
+                    loginPassword.style.backgroundColor = "#efdfbb";
+                } else {
+                    loginMessage.style.color = "#911911";
+                    loginMessage.innerText = data.message;
+                }
+            } catch (err) {
+                loginSpinner.style.display = "none";
+                loginMessage.style.color = "#911911";
+                loginMessage.innerText = "Server error";
+            }
+        };
+
+        // --- Show profile ---
+        function showProfile(data) {
+            profileSection.style.display = "block";
+            profileName.innerText = data.username;
+            profileEmail.innerText = data.email;
+            signupForm.style.display = "none";
+            loginForm.style.display = "none";
+            signupTab.style.display = "none";
+            loginTab.style.display = "none";
+        }
+
+        // --- Auto-login ---
+        async function autoLogin() {
+            signupMessage.innerText = "";
+            loginMessage.innerText = "";
+            const token = localStorage.getItem("token");
+            if (!token) return;
+
+            try {
+                const res = await fetch("/api/profile", {
+                    headers: { "Authorization": `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (res.ok) showProfile(data);
+            } catch (err) {
+                console.error("Auto-login failed", err);
+            }
+        }
+
+        // --- Logout ---
+        logoutBtn.onclick = () => {
+            localStorage.removeItem("token");
+            profileSection.style.display = "none";
+            signupTab.style.display = "inline-block";
+            loginTab.style.display = "inline-block";
+            signupTab.classList.add("active");
+            loginTab.classList.remove("active");
+            signupForm.style.display = "flex";
+            loginForm.style.display = "none";
+        };
+
+        // --- Initialize ---
+        window.addEventListener("DOMContentLoaded", autoLogin);
+    </script>
+</body>
+
+</html>
