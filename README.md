@@ -155,151 +155,142 @@ For instance, if 'Thaltej' is written in the textbox and the 'Set Location' butt
 ### Nearby Facilities
 Simultaneously, it displays a comprehensive list of nearby facilities like hospitals, fire stations, etc around the user's location within a distance of user's choice in the range of 7 KMs.
 
-<!-- Add: nearby-facilities-screenshot.png -->
-![Nearby Facilities](./screenshots/nearby-facilities.png)
+![Nearby Facilities](screenshots/nearby-facilities.png)
 
 ### Test Data - SheltR City
 We have stored dummy data that is a fictional/made-up city called 'SheltR' for testing purposes.
 
+![SheltR Test Data](screenshots/sheltR-test-data1.png)
+
 When SheltR is entered in the textbox, the API translates the made up city into actual coordinates and shows made up facilities around those coordinates. In both automatic and manual location detection, a comprehensive list of facilities is shown with name, type, address, availability, and contact number.
 
-<!-- Add: sheltR-test-data-screenshot.png -->
-![SheltR Test Data](./screenshots/sheltR-test-data.png)
+![SheltR Test Data](screenshots/sheltR-test-data2.png)
 
 ### Homepage Navigation
 Using the browser's navigation, the user goes back to the landing page to explore the website further.
 
+![Landing Page](screenshots/landing-page-2.png)
+
 When the user clicks on the 'HOME' button in the navigation bar of the website, it leads the user to the home page which is a menu for the main modules of the website. The 'Immediate Emergency Assistance' can also be accessed from the homepage.
 
-<!-- Add: homepage-screenshot.png -->
-![Homepage](./screenshots/homepage.png)
+![Homepage](screenshots/homepage.png)
 
 ### Weather Dashboard
 On clicking the navigation arrow in the 'Live Weather Dashboard' section, it leads the user to the weather webpage. On the user's entry to the webpage, it automatically detects the location of the user and displays its weather information. It displays 'Current Weather' and '5-day Forecast'.
 
-<!-- Add: weather-dashboard-screenshot.png -->
-![Weather Dashboard](./screenshots/weather-dashboard.png)
+![Weather Dashboard](screenshots/weather-dashboard.png)
 
 ### Automatic Weather Location
 This is how automatic location works upon the user's entry to the webpage. Another way for the user to submit their location automatically to the backend is the 'Detect My Location' button. When the user clicks on it, it automatically detects the user's location and displays the weather information.
 
-<!-- Add: automatic-weather-screenshot.png -->
-![Automatic Weather Detection](./screenshots/automatic-weather.png)
+![Automatic Weather Detection](screenshots/automatic-weather.png)
 
 ### Manual Weather Input
 Location can also be entered manually in the input textbox. And the weather of that location can be viewed by clicking on the 'Get Weather' button. For instance, in the picture below, the user enters Mumbai in the textbox and clicks on the 'Get Weather' button to access the weather of Mumbai.
 
-<!-- Add: manual-weather-screenshot.png -->
-![Manual Weather Input](./screenshots/manual-weather.png)
+![Manual Weather Input](screenshots/manual-weather.png)
 
 ### Weather Details
 The 'Current Weather' section displays the city name and country initials and weather factors like temperature, condition, humidity, and wind speed of that city. The '5-day Forecast' section displays the next 5 five days and dates with temperature, condition, and humidity in that city for each day.
 
-<!-- Add: weather-details-screenshot.png -->
-![Weather Details](./screenshots/weather-details.png)
+![Weather Details](screenshots/weather-details.png)
 
 ### Recent Disasters Module
 The user can navigate back to the home page by clicking on the 'HOME' button and access the Recent Disaster Module to view regular disaster updates.
 
+![Recent Disasters](screenshots/recent-homepage.png)
+
 After accessing the Recent Disasters Module through the navigation arrow, a list of recent disasters show up.
 
-<!-- Add: recent-disasters-screenshot.png -->
-![Recent Disasters](./screenshots/recent-disasters.png)
+![Recent Disasters](screenshots/recent-disasters.png)
 
 ### Disaster Information
 For each disaster in the list, the name of the country where the disaster occurred, the type of disaster, the day and date of the occurrence and a bit of description about the disaster is displayed.
 
-<!-- Add: disaster-details-screenshot.png -->
-![Disaster Details](./screenshots/disaster-details.png)
+![Disaster Details](screenshots/disaster-details.png)
 
 ### Emergency Dos & Don'ts Module
 The user can navigate back to the home page by clicking on the 'HOME' button and access the Emergency Dos & Don'ts Module to view essential dos and don'ts instructions during the time of emergency like disasters.
 
+![Dos & Don'ts List](screenshots/dosdonts-homepage.png)
+
 After accessing the Emergency Dos and Don'ts Module through the navigation arrow a list of types of disasters show up with the dos and don'ts instructions.
 
-<!-- Add: dos-donts-list-screenshot.png -->
-![Dos & Don'ts List](./screenshots/dos-donts-list.png)
+![Dos & Don'ts List](screenshots/dos-donts-list.png)
 
 ### Disaster Types
 The list consists of 13 types of disasters. Clicking on any disaster would result in the essential dos & don'ts instructions for that disaster.
 
-<!-- Add: disaster-types-screenshot.png -->
-![Disaster Types](./screenshots/disaster-types.png)
+![Disaster Types](screenshots/disaster-types.png)
 
 ### Multi-language Support
 Moreover, the instructions are available in 3 languages which are English, Hindi, and Gujarati. The user can choose between these languages by selecting one of them in the 'Select Language' dropdown.
 
-The 'Select Language' dropdown menu gives 3 options to the user, if the user chooses English language, the dos & don'ts instructions are displayed in English.
+![Select Language](screenshots/select-lang.png)
 
-<!-- Add: english-language-screenshot.png -->
-![English Language](./screenshots/english-language.png)
+The 'Select Language' dropdown menu gives 3 options to the user, if the user chooses English language, the dos & don'ts instructions are displayed in English. If the user chooses Hindi language, the dos & don'ts instructions are displayed in Hindi.
 
-If the user chooses Hindi language, the dos & don'ts instructions are displayed in Hindi.
-
-<!-- Add: hindi-language-screenshot.png -->
-![Hindi Language](./screenshots/hindi-language.png)
+![Hindi Language](screenshots/hindi-language.png)
 
 If the user chooses Gujarati language, the dos & don'ts instructions are displayed in Gujarati.
 
-<!-- Add: gujarati-language-screenshot.png -->
-![Gujarati Language](./screenshots/gujarati-language.png)
+![Gujarati Language](screenshots/gujarati-language.png)
 
 ### About Us Section
 The user can navigate back to the home page by clicking on the 'HOME' button and access the About Us section by clicking on the 'ABOUT US' button in the navigation bar.
 
+![About Us Navigation](screenshots/about-homepage.png)
+
 Clicking on the 'ABOUT US' button in the navigation bar will result in the static About Us section webpage.
 
-The About Us section consists of information about SheltR. It has sub-sections like 'Our Mission', 'What We Do', and 'Why Choose Sheltr.?'
+![About Us](screenshots/about-us1.png)
 
-<!-- Add: about-us-screenshot.png -->
-![About Us](./screenshots/about-us.png)
+The About Us section consists of information about **SheltR.** It has sub-sections like 'Our Mission', 'What We Do', and 'Why Choose Sheltr.?'
+
+![About Us](screenshots/about-us2.png)
 
 ### Contact Section
 The user can navigate back to the home page by clicking on the 'HOME' button and access the Contact section by clicking on the 'CONTACT' button in the navigation bar.
 
+![Contact Navigation](screenshots/contact-homepage.png)
+
 Clicking on the 'CONTACT' button in the navigation bar will result in the static contact section webpage which has various social media and contact details.
 
-<!-- Add: contact-section-screenshot.png -->
-![Contact Section](./screenshots/contact-section.png)
+![Contact Section](screenshots/contact-section.png)
 
 ### Settings & Authentication
 The user can navigate back to the home page by clicking on the 'HOME' button and access the Settings section by clicking on the button with the settings/gear symbol in the navigation bar.
 
+![Settings Navigation](screenshots/settings-homepage.png)
+
 Clicking on the gear button in the navigation bar will result in the Settings section webpage which has the authentication functionality for authenticating the user. By default the Sign Up section is opened.
 
-<!-- Add: signup-section-screenshot.png -->
-![Sign Up Section](./screenshots/signup-section.png)
+![Sign Up Section](screenshots/signup-section.png)
 
 ### Sign Up Validation
 The Sign Up section is for registering a new user. It has a full name, email, and password as the input fields. It has various validations for instance, if a user doesn't add '@' in the email address then it will throw a prompt asking the user to include '@'.
 
+![Form Validation](screenshots/validation1.png)
+
 It also has validation for empty fields. If the user doesn't fill out all the fields and clicks the 'Sign Up' button in order to register, the user will see a prompt that says 'All fields are required'.
 
-<!-- Add: validation-screenshot.png -->
-![Form Validation](./screenshots/validation.png)
+![Form Validation](screenshots/validation2.png)
 
 ### Successful Registration
 After the user successfully enters all the fields in the correct format and clicks the 'Sign Up' button, the user will see a prompt that says 'User registered successfully'.
 
+![Registration Success](screenshots/registration-success1.png)
+
 The 'User registered successfully' prompt means that the user is registered and the user's details are stored in the database.
 
-<!-- Add: registration-success-screenshot.png -->
-![Registration Success](./screenshots/registration-success.png)
+![Registration Success](screenshots/registration-success2.png)
 
 ### Login Section
 Next, the user can click on the 'Login' tab to access the login section webpage in order to log into the website and view their profile.
 
-<!-- Add: login-section-screenshot.png -->
-![Login Section](./screenshots/login-section.png)
+![Login Section](screenshots/login-section.png)
 
 ### User Profile
-The Login section has the same validations and once the user enters the correct credentials (email and password) and clicks on the 'Login' button the webpage displays the profile which has a 'Welcome' message along with the username entered during registration, the user's entered email address and a 'Logout' button.
+The Login section has the same validations and once the user enters the correct credentials (email and password) and clicks on the 'Login' button the webpage displays the profile which has a 'Welcome' message along with the username entered during registration, the user's entered email address and a 'Logout' button. If the 'Logout' button is clicked, the page goes back to the default Sign Up section which represents the logging out of the user's profile.
 
-<!-- Add: user-profile-screenshot.png -->
-![User Profile](./screenshots/user-profile.png)
-
-### Logout Functionality
-If the 'Logout' button is clicked, the page goes back to the default Sign Up section which represents the logging out of the user's profile.
-
-<!-- Add: logout-screenshot.png -->
-![Logout](./screenshots/logout.png)
+![Logout](screenshots/logout.png)
