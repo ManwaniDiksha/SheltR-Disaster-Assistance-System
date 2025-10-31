@@ -119,7 +119,7 @@ npm start
 ### 5. Access the Application
 Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
-## 🖥️ User Interface Screens
+## 🖥️ User Interface
 
 ### Landing Page
 After running the server, the Landing Page is accessed with `http://localhost:3000/landingpage.html` and it has several buttons that lead to different modules.
