@@ -124,26 +124,22 @@ Open your browser and go to [http://localhost:3000](http://localhost:3000)
 ### Landing Page
 After running the server, the Landing Page is accessed with `http://localhost:3000/landingpage.html` and it has several buttons that lead to different modules.
 
-<!-- Add: landing-page-screenshot.png -->
 ![Landing Page](screenshots/landing-page.png)
 
 ### Immediate Assistance Module
 The 'Get Immediate Assistance' button leads to its Module which is accessed through `http://localhost:3000/emergency.html`
 
-<!-- Add: emergency-module-screenshot.png -->
-![Emergency Module](./screenshots/emergency-module.png)
+![Emergency Module](screenshots/emergency-module.png)
 
 ### Location Detection
 After clicking on the 'Detect My Location' button, the browser's geolocation API throws a prompt for location permission.
 
-<!-- Add: location-permission-screenshot.png -->
-![Location Permission Prompt](./screenshots/location-permission.png)
+![Location Permission Prompt](screenshots/location-permission.png)
 
 ### Automatic Location Detection
 After allowing localhost to access the user's location, the browser automatically detects the user's location and locates their device on the map with a 'You are here' prompt on a pin with the accurate location.
 
-<!-- Add: automatic-location-screenshot.png -->
-![Automatic Location Detection](./screenshots/automatic-location.png)
+![Automatic Location Detection](screenshots/automatic-location.png)
 
 ### Manual Location Input
 The user's location can also be entered manually in the input textbox.
