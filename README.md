@@ -26,8 +26,11 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 - [Installation & Setup](#-installation--setup)
 - [User Interface Screens](#️-user-interface-screens)
 - [Future Enhancements](#-future-enhancements)
-- [Creators](#creators)
+- [Creators](#-creators)
 - [License](#-license)
+- [Contributing](#-contributing)
+- [Acknowledgements](#-acknowledgements)
+- [Contact](#-contact)
 
 ## 🚀 Features
 
