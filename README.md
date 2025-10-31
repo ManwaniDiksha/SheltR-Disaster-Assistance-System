@@ -320,8 +320,6 @@ The Login section has the same validations and once the user enters the correct 
 This project is licensed under the **MIT License** — feel free to use, modify, and share with attribution.  
 See the [LICENSE](LICENSE) file for details.
 
-⭐ *If you found this project helpful, consider starring it on GitHub!*
-
 ## 🤝 Contributing
 Contributions, issues, and feature requests are **welcome**!  
 
@@ -333,3 +331,6 @@ Contributions, issues, and feature requests are **welcome**!
 
 ## 📬 Contact
 For support, questions, or collaboration, reach out via email: **manwanidiksh@gmail.com**
+
+
+⭐ *If you found this project helpful, consider starring it on GitHub!*
