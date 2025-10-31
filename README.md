@@ -32,39 +32,39 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 
 ## 🚀 Features
 
-**User Location Detection:** Uses browser geolocation APIs to detect user coordinates automatically. Provides manual input fallback (postal code or city) for users who deny permission. Stores user location for querying nearby safety facilities and alerts.
+- **User Location Detection:** Uses browser geolocation APIs to detect user coordinates automatically. Provides manual input fallback (postal code or city) for users who deny permission. Stores user location for querying nearby safety facilities and alerts.
 
-**Range/Distance Filtering:** Allows users to specify a search radius (e.g., 2 km, 5km, 7 km) around their location. Uses geospatial database queries to filter facilities within the chosen distance. 
+- **Range/Distance Filtering:** Allows users to specify a search radius (e.g., 2 km, 5km, 7 km) around their location. Uses geospatial database queries to filter facilities within the chosen distance. 
 
-**Facility Information:** Shows contact number(s), address (with map links), and current availability/capacity status for each listed facility. Updates availability data in real-time or via periodic admin inputs. 
+- **Facility Information:** Shows contact number(s), address (with map links), and current availability/capacity status for each listed facility. Updates availability data in real-time or via periodic admin inputs. 
 
-**Real-Time Weather Dashboard:** Displays current weather and warnings based on user input (pincode or lat-long). Integrates with OpenWeatherMap or similar APIs for detailed weather metrics. Shows temperature, precipitation, wind speed, and severe weather alerts. 
+- **Real-Time Weather Dashboard:** Displays current weather and warnings based on user input (pincode or lat-long). Integrates with OpenWeatherMap or similar APIs for detailed weather metrics. Shows temperature, precipitation, wind speed, and severe weather alerts. 
 
-**Global Recent Disaster Updates:** Fetches and displays recent global or regional disasters using ReliefWeb API. Provides event type, location, and time details.
+- **Global Recent Disaster Updates:** Fetches and displays recent global or regional disasters using ReliefWeb API. Provides event type, location, and time details.
 
-**Disaster Dos & Don’ts Dashboard:** Shows guidance content with safety instructions tailored to specific disaster types. Presents clear, easy-to-understand, and multi-lingual “dos & don’ts” to help users prepare or respond.
+- **Disaster Dos & Don’ts Dashboard:** Shows guidance content with safety instructions tailored to specific disaster types. Presents clear, easy-to-understand, and multi-lingual “dos & don’ts” to help users prepare or respond.
 
-**Multi-language Safety Guidance:** Comprehensive and clear dos & don’ts covered for 13 disaster types with trilingual support (English, Hindi, Gujarati).
+- **Multi-language Safety Guidance:** Comprehensive and clear dos & don’ts covered for 13 disaster types with trilingual support (English, Hindi, Gujarati).
 
-**Secure Authentication:** Email-based account creation with validation with secure token-based (JWT-based) authentication and bcrypt hashing for password security.
+- **Secure Authentication:** Email-based account creation with validation with secure token-based (JWT-based) authentication and bcrypt hashing for password security.
 
 ## 🧩 System Modules
 
-**Authentication Module:** Handles secure user registration, login, and session management using JWT tokens and bcrypt password hashing. Provides auto-login functionality and user profile management with simplified forms for emergency access.
+- **Authentication Module:** Handles secure user registration, login, and session management using JWT tokens and bcrypt password hashing. Provides auto-login functionality and user profile management with simplified forms for emergency access.
 
-**Location Detection & Mapping Module:** Integrates browser geolocation and Nominatim geocoding for precise positioning. Uses Leaflet.js with OpenStreetMap tiles to display interactive maps with user locations and facility markers, including adjustable search radii and navigation features.
+- **Location Detection & Mapping Module:** Integrates browser geolocation and Nominatim geocoding for precise positioning. Uses Leaflet.js with OpenStreetMap tiles to display interactive maps with user locations and facility markers, including adjustable search radii and navigation features.
 
-**Facility Finder Module:** Locates and displays nearby emergency facilities (hospitals, shelters, fire stations) using real-time data from OpenStreetMap APIs. Shows contact information, availability status, and provides direct address to critical resources during emergencies. 
+- **Facility Finder Module:** Locates and displays nearby emergency facilities (hospitals, shelters, fire stations) using real-time data from OpenStreetMap APIs. Shows contact information, availability status, and provides direct address to critical resources during emergencies. 
 
-**Dos & Don’ts Dashboard Module:** Provides safety guidance for 13 disaster types in English, Hindi, and Gujarati. Features clear “Dos/Don’ts” format with emoji-based visual categorization and tabbed navigation for quick access to emergency protocols.
+- **Dos & Don’ts Dashboard Module:** Provides safety guidance for 13 disaster types in English, Hindi, and Gujarati. Features clear “Dos/Don’ts” format with emoji-based visual categorization and tabbed navigation for quick access to emergency protocols.
 
-**Weather Dashboard Module:** Delivers real-time weather data and 5-day forecasts via OpenWeatherMap API. Displays current conditions, severe weather alerts, and forecasting information with intuitive icons and location-based weather intelligence.
+- **Weather Dashboard Module:** Delivers real-time weather data and 5-day forecasts via OpenWeatherMap API. Displays current conditions, severe weather alerts, and forecasting information with intuitive icons and location-based weather intelligence.
 
-**Recent Disaster Updates Module:** Aggregates global disaster alerts from ReliefWeb API, showing real-time information on earthquakes, floods, storms, and other emergencies. Features categorized disaster listings with visual indicators and impact assessment data. 
+- **Recent Disaster Updates Module:** Aggregates global disaster alerts from ReliefWeb API, showing real-time information on earthquakes, floods, storms, and other emergencies. Features categorized disaster listings with visual indicators and impact assessment data. 
 
-**Static Information Modules (About Us Module and Contact Module):** About Us provides mission and team information, while Contact offers support channels. Both maintain consistent branding and accessibility standards for organizational transparency and user support.
+- **Static Information Modules (About Us Module and Contact Module):** About Us provides mission and team information, while Contact offers support channels. Both maintain consistent branding and accessibility standards for organizational transparency and user support.
 
-### 💻 Tech Stack
+## 💻 Tech Stack
 
 | **Layer**                  | **Technology**                     | **Purpose** |
 |------------------------|--------------------------------|---------|
