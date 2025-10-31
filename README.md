@@ -294,3 +294,42 @@ Next, the user can click on the 'Login' tab to access the login section webpage 
 The Login section has the same validations and once the user enters the correct credentials (email and password) and clicks on the 'Login' button the webpage displays the profile which has a 'Welcome' message along with the username entered during registration, the user's entered email address and a 'Logout' button. If the 'Logout' button is clicked, the page goes back to the default Sign Up section which represents the logging out of the user's profile.
 
 ![Logout](screenshots/logout.png)
+
+## 🚀 Future Enhancements
+
+- **Multi-Disaster Alerts:** Support for multiple hazard types with modular detection layers. 
+
+- **SMS/Email Emergency Notifications:** Reliable communication during low connectivity. 
+
+- **AI-Powered Disaster Predictions:** Machine learning–based disaster forecasting and pattern analysis.  
+
+- **Offline Support with Cached Maps:** Cached maps and data for accessibility during network outages.  
+
+- **SOS Emergency Button:** One-click emergency alert to notify nearby facilities for quick help.
+
+<!--
+## 👩‍💻 Creators
+
+- [Diksha Manwani](https://github.com/ManwaniDiksha) - [manwanidiksh@gmail.com](mailto:manwanidiksh@gmail.com)
+- [Khushi Patel](https://github.com/johndoe) - [khushiypatel2005@gmail.com](mailto:khushiypatel2005@gmail.com)
+- [Aayushi Mistry](https://github.com/janesmith) - []()
+-->
+
+## 🧾 License
+
+This project is licensed under the **MIT License** — feel free to use, modify, and share with attribution.  
+See the [LICENSE](LICENSE) file for details.
+
+⭐ *If you found this project helpful, consider starring it on GitHub!*
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are **welcome**!  
+
+## 🙏 Acknowledgements
+- **OpenStreetMap & Leaflet.js** – Interactive maps  
+- **OpenWeatherMap API** – Real-time weather data  
+- **ReliefWeb API** – Disaster updates  
+- Inspiration from real-time emergency alert systems and disaster management best practices  
+
+## 📬 Contact
+For support, questions, or collaboration, reach out via email: **manwanidiksh@gmail.com**
