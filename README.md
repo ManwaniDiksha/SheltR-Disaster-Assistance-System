@@ -125,7 +125,7 @@ Open your browser and go to [http://localhost:3000](http://localhost:3000)
 After running the server, the Landing Page is accessed with `http://localhost:3000/landingpage.html` and it has several buttons that lead to different modules.
 
 <!-- Add: landing-page-screenshot.png -->
-![Landing Page](./screenshots/landing-page.png)
+![Landing Page](screenshots/landing-page.png)
 
 ### Immediate Assistance Module
 The 'Get Immediate Assistance' button leads to its Module which is accessed through `http://localhost:3000/emergency.html`
