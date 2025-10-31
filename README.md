@@ -1,5 +1,5 @@
 # SheltR-Disaster-Assistance-System
-**__SheltR__** is a **Disaster Assistance System** that helps users find nearby safety facilities, view real-time weather and disaster updates, and access multilingual safety guidance during emergencies.
+**SheltR** is a **Disaster Assistance System** that helps users find nearby safety facilities, view real-time weather and disaster updates, and access multilingual safety guidance during emergencies.
 
 It bridges the gap between **authorities, responders, and the public**, ensuring that critical alerts and resources reach those who need them most.
 
@@ -23,7 +23,6 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 - [Features](#-features)
 - [System Modules](#-system-modules)
 - [Tech Stack](#-tech-stack)
-- [Project Sturcture](#-project-structure)
 - [Installation & Setup](#-installation--setup)
 - [User Interface](#-user-interface)
 - [Future Enhancements](#-future-enhancements)
@@ -64,7 +63,7 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 
 - **Static Information Modules (About Us Module and Contact Module):** About Us provides mission and team information, while Contact offers support channels. Both maintain consistent branding and accessibility standards for organizational transparency and user support.
 
-## 💻 Tech Stack
+## 🛠 Tech Stack
 
 | **Layer**                  | **Technology**                     | **Purpose** |
 |------------------------|--------------------------------|---------|
@@ -89,3 +88,33 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
   <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-VersionControl-F05032?logo=git&logoColor=white" alt="Git badge" /></a>
   <a href="https://www.postman.com/"><img src="https://img.shields.io/badge/Postman-API%20Testing-FF6C37?logo=postman&logoColor=white" alt="Postman badge" /></a>
 </p>
+
+## 💻 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ManwaniDiksha/SheltR-Disaster-Assistance-System.git
+cd SheltR-Disaster-Assistance-System
+```
+
+### 2. Install Backend Dependencies
+```bash
+cd backend
+npm install
+```
+
+### 3. Configure Environment Variables
+Create a `.env` file in the `backend` folder:
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+### 4. Start the Application
+```bash
+npm start
+```
+
+### 5. Access the Application
+Open your browser and go to [http://localhost:3000](http://localhost:3000)
