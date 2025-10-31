@@ -24,7 +24,7 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 - [System Modules](#-system-modules)
 - [Tech Stack](#-tech-stack)
 - [Installation & Setup](#-installation--setup)
-- [User Interface](#-user-interface)
+- [User Interface](#-user-interface-screens)
 - [Future Enhancements](#-future-enhancements)
 - [Creators](#creators)
 - [License](#-license)
@@ -119,7 +119,7 @@ npm start
 ### 5. Access the Application
 Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
-## 🖥️ User Interface
+## 🖥️ User Interface Screens
 
 ### Landing Page
 After running the server, the Landing Page is accessed with `http://localhost:3000/landingpage.html` and it has several buttons that lead to different modules.
