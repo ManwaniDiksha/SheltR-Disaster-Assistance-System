@@ -66,8 +66,8 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 
 ### 💻 Tech Stack
 
-| Layer / Technology       | Purpose |
-|--------------------------|---------|
+| Layer | Technology       | Purpose |
+|--------|------------------|---------|
 | **Frontend**             | HTML5, CSS3, JavaScript (ES6+) – Build interactive & dynamic UI with API integration |
 | **Backend**              | Node.js + Express.js – API server, data management |
 | **Database**             | MongoDB + Mongoose – Stores user data |
