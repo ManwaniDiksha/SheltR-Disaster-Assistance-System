@@ -66,16 +66,16 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 
 ### 💻 Tech Stack
 
-| Layer | Technology       | Purpose |
-|--------|------------------|---------|
-| **Frontend**             | HTML5, CSS3, JavaScript (ES6+) – Build interactive & dynamic UI with API integration |
-| **Backend**              | Node.js + Express.js – API server, data management |
-| **Database**             | MongoDB + Mongoose – Stores user data |
-| **Mapping & Location**   | OpenStreetMap + Leaflet.js – Interactive maps and emergency facility visualization |
-| **Geocoding**            | Nominatim API – Convert addresses to coordinates & vice versa |
-| **Weather Data**         | OpenWeatherMap API – Real-time weather & emergency forecasts |
-| **Disaster Intelligence**| ReliefWeb API – Global disaster & emergency updates |
-| **Authentication**       | JWT + bcrypt – Secure user sessions & data protection |
-| **Development Tools**    | Git + GitHub – Version control & team collaboration |
-| **API Testing**          | Postman – API development & testing |
-| **External Services**    | Browser Geolocation API – Native device location detection |
+| **Layer**                  | **Technology**                     | **Purpose** |
+|------------------------|--------------------------------|---------|
+| **Frontend**               | HTML5, CSS3, JavaScript (ES6+) | Build interactive & dynamic UI with API integration |
+| **Backend**                | Node.js + Express.js            | API server, data management |
+| **Database**               | MongoDB + Mongoose             | Stores user data |
+| **Mapping & Location**     | OpenStreetMap + Leaflet.js      | Interactive maps and emergency facility visualization |
+| **Geocoding**              | Nominatim API                  | Convert addresses to coordinates & vice versa |
+| **Weather Data**           | OpenWeatherMap API             | Real-time weather & emergency forecasts |
+| **Disaster Intelligence**  | ReliefWeb API                  | Global disaster & emergency updates |
+| **Authentication**         | JWT + bcrypt                   | Secure user sessions & data protection |
+| **Development Tools**      | Git + GitHub                   | Version control & team collaboration |
+| **API Testing**            | Postman                        | API development & testing |
+| **External Services**      | Browser Geolocation API         | Native device location detection |
