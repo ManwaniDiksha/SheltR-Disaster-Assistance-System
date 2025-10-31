@@ -79,3 +79,13 @@ SheltR’s mission is to empower individuals and communities with immediate, acc
 | **Development Tools**      | Git + GitHub                   | Version control & team collaboration |
 | **API Testing**            | Postman                        | API development & testing |
 | **External Services**      | Browser Geolocation API         | Native device location detection |
+
+<p align="center">
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-18.x-339933?logo=node.js&logoColor=white" alt="Node.js badge" /></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-4.x-000000?logo=express&logoColor=white" alt="Express badge" /></a>
+  <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-6.x-47A248?logo=mongodb&logoColor=white" alt="MongoDB badge" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/TailwindCSS-Framework-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind badge" /></a>
+  <a href="https://jwt.io/"><img src="https://img.shields.io/badge/JWT-Security-000000?logo=jsonwebtokens&logoColor=white" alt="JWT badge" /></a>
+  <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-VersionControl-F05032?logo=git&logoColor=white" alt="Git badge" /></a>
+  <a href="https://www.postman.com/"><img src="https://img.shields.io/badge/Postman-API%20Testing-FF6C37?logo=postman&logoColor=white" alt="Postman badge" /></a>
+</p>
