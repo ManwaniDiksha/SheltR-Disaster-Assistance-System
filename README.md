@@ -21,3 +21,4 @@ It bridges the gap between **authorities, responders, and the public**, ensuring
 - [User Interface](#-user-interface)
 - [Future Enhancements](#-future-enhancements)
 - [Creators](#creators)
+- [License](#-license)
