@@ -131,23 +131,26 @@ The 'Get Immediate Assistance' button leads to its Module which is accessed thro
 
 ![Emergency Module](screenshots/emergency-module.png)
 
+![Location Permission Prompt](screenshots/location-permission.png)
+
 ### Location Detection
 After clicking on the 'Detect My Location' button, the browser's geolocation API throws a prompt for location permission.
 
-![Location Permission Prompt](screenshots/location-permission.png)
+![Automatic Location Detection](screenshots/automatic-location.png)
 
 ### Automatic Location Detection
 After allowing localhost to access the user's location, the browser automatically detects the user's location and locates their device on the map with a 'You are here' prompt on a pin with the accurate location.
 
-![Automatic Location Detection](screenshots/automatic-location.png)
+![Automatic Location Detection](screenshots/automatic-location-detection.png)
 
 ### Manual Location Input
 The user's location can also be entered manually in the input textbox.
 
+![Manual Location Input](screenshots/type-thaltej.png)
+
 For instance, if 'Thaltej' is written in the textbox and the 'Set Location' button is clicked, the external geocoding API converts the location to the exact coordinates and locates the user on the map like it did for automatic location detection.
 
-<!-- Add: manual-location-screenshot.png -->
-![Manual Location Input](./screenshots/manual-location.png)
+![Manual Location Input](screenshots/manual-location.png)
 
 ### Nearby Facilities
 Simultaneously, it displays a comprehensive list of nearby facilities like hospitals, fire stations, etc around the user's location within a distance of user's choice in the range of 7 KMs.
