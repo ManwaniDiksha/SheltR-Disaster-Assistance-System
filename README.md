@@ -310,13 +310,11 @@ The Login section has the same validations and once the user enters the correct 
 
 - **SOS Emergency Button:** One-click emergency alert to notify nearby facilities for quick help.
 
-<!--
 ## 👩‍💻 Creators
 
 - [Diksha Manwani](https://github.com/ManwaniDiksha) - [manwanidiksh@gmail.com](mailto:manwanidiksh@gmail.com)
-- [Khushi Patel](https://github.com/johndoe) - [khushiypatel2005@gmail.com](mailto:khushiypatel2005@gmail.com)
-- [Aayushi Mistry](https://github.com/janesmith) - []()
--->
+- [Khushi Patel](https://github.com/khushiypatel2005-cmyk) - [khushiypatel2005@gmail.com](mailto:khushiypatel2005@gmail.com)
+- [Aayushi Mistry]() - [mistryaayushi836@gmail.com](mailto:mistryaayushi836@gmail.com)
 
 ## 🧾 License
 
